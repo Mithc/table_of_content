@@ -1,9 +1,13 @@
 import React from 'react';
-import './app.scss';
+import './App.scss';
+import Sidebar from "./components/Sidebar";
 
 function App() {
     return <div className="app-container">
-        <h1>Hello Worls</h1>
+        <header className={'header'}>
+            <h3 className={'header-text'}>PAGE HEADER</h3>
+        </header>
+        <Sidebar/>
     </div>
 }
 
