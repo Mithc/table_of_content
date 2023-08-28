@@ -4,12 +4,18 @@
     height: 100vh;
 
     .header {
+        transition: background-color 0.3s ease-in-out;
         height: 100px;
         background-color: antiquewhite;
         width: 100%;
         font-size: 25px;
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
         .header-text {
+            margin-left: 20px;
+            transition: color 0.3s ease-in-out;
             padding-left: 20px;
         }
     }
@@ -18,5 +24,78 @@
         display: flex;
         flex-direction: column;
         justify-content: left;
+    }
+
+    .switch {
+        margin-top: 30px;
+        margin-right: 10px;
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+
+        &.round {
+            border-radius: 34px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                height: 20px;
+                width: 20px;
+                left: 2px;
+                bottom: 2px;
+                background-color: white;
+                transition: 0.4s;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    input:checked + .slider.round {
+        background-color: #808080;
+        transition: background-color 0.3s ease-in-out;
+
+        &::before {
+            left: calc(100% - 22px);
+            background-color: #ccc;
+        }
+    }
+
+    .label {
+        margin-top: 27px;
+        margin-right: 20px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    &.dark {
+        .header {
+            background-color: #333;
+
+            .header-text {
+                color: antiquewhite;
+            }
+
+            .label {
+                color: antiquewhite;
+            }
+        }
     }
 }

@@ -3,15 +3,15 @@ import Placeholder from './Placeholder'
 import './Tree.scss'
 
 const Tree: React.FC = () => {
-  const [isLoading] = useState<boolean>(true)
+    const [isLoading] = useState<boolean>(true)
 
-  const renderTree: () => React.ReactElement = () => <></>
+    const renderTree: () => React.ReactElement = () => <></>
 
-  return (
+    return (
         <div className={'tree-container'}>
             {isLoading ? <Placeholder /> : renderTree()}
         </div>
-  )
+    )
 }
 
 export default Tree

@@ -3,11 +3,11 @@ import Tree from './Tree'
 import './Sidebar.scss'
 
 const Sidebar: React.FC = () => {
-  return (
+    return (
         <div className={'sidebar'}>
             <Tree></Tree>
         </div>
-  )
+    )
 }
 
 export default Sidebar
