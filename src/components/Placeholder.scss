@@ -1,0 +1,33 @@
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 24px;
+    margin: 0 32px;
+}
+
+.rectangle {
+    width: 100px;
+    height: 20px;
+    background-color: #f4f4f4;
+
+    &.w80 {
+        width: 80%;
+    }
+
+    &.w100 {
+        width: 100%;
+    }
+
+    &.w60 {
+        width: 60%;
+    }
+
+    &.l1 {
+        margin-left: 16px;
+    }
+
+    &.l2 {
+        margin-left: 32px;
+    }
+}

@@ -36,8 +36,6 @@ Run mocked backend using JSON Server on 4200 port.
 Run `npm install -g json-server` to install json-server globally
 
 Resources generated:
-- http://localhost:4200/entities
-- http://localhost:4200/topLevelIds
 
-
-
+-   http://localhost:4200/entities
+-   http://localhost:4200/topLevelIds

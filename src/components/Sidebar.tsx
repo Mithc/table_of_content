@@ -1,10 +1,13 @@
-import React from 'react';
-import Tree from "./Tree";
+import React from 'react'
+import Tree from './Tree'
+import './Sidebar.scss'
 
 const Sidebar: React.FC = () => {
-    return <>
-        <Tree></Tree>
-    </>
+  return (
+        <div className={'sidebar'}>
+            <Tree></Tree>
+        </div>
+  )
 }
 
-export default Sidebar;
+export default Sidebar

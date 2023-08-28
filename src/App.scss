@@ -1,16 +1,22 @@
 .app-container {
-  background-color: rebeccapurple;
-  width: 100vw;
-  height: 100vh;
+    background-color: rebeccapurple;
+    width: 100vw;
+    height: 100vh;
 
-  .header {
-    height: 100px;
-    background-color: antiquewhite;
-    width: 100%;
-    font-size: 25px;
-    display: flex;
-    .header-text {
-      padding-left: 20px;
+    .header {
+        height: 100px;
+        background-color: antiquewhite;
+        width: 100%;
+        font-size: 25px;
+        display: flex;
+        .header-text {
+            padding-left: 20px;
+        }
     }
-  }
+
+    .body-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
 }
