@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Placeholder from './Placeholder'
 import './Tree.scss'
 import { PageList, PageListResponse } from '../interfaces/Page'
 import TreeNode from './TreeNode'
+import { ThemeContext } from '../context/ThemeContext'
 
 const Tree: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const [treeData, setTreeData] = useState<PageList>({})
     const [topLevelIds, setTopLevelIds] = useState<string[]>([])
+    const [activeNodeId, setActiveNodeId] = useState<string | null>(null)
+    const theme = useContext(ThemeContext)
+
     useEffect((): void => {
         fetchData()
     }, [])
@@ -46,13 +50,15 @@ const Tree: React.FC = () => {
                         key={treeData[topLevelId].id}
                         treeData={treeData}
                         node={treeData[topLevelId]}
+                        activeNodeId={activeNodeId}
+                        setActiveNode={setActiveNodeId}
                     />
                 )
             })}
         </>
     )
     return (
-        <div className="tree-container">
+        <div className={`tree-container ${theme}`}>
             {isLoading ? <Placeholder /> : <>{renderTree({})}</>}
         </div>
     )

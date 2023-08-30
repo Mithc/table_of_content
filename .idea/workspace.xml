@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="301fbf20-9424-4eea-8d9f-ce8a25867209" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Icon.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Icon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TreeNode.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TreeNode.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/JetBrainsMono-Medium.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tree.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tree.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tree.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tree.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/Page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/Page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TreeNode.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TreeNode.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TreeNode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TreeNode.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +40,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "/Users/macbook/WebstormProjects/table_of_content/src/components",
+    "last_opened_file_path": "/Users/macbook/WebstormProjects/table_of_content/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -59,6 +56,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -135,7 +133,7 @@
       <option name="presentableId" value="Default" />
       <updated>1692974688084</updated>
       <workItem from="1692974689949" duration="773000" />
-      <workItem from="1692975474015" duration="36667000" />
+      <workItem from="1692975474015" duration="40698000" />
     </task>
     <servers />
   </component>
