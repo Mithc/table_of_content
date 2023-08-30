@@ -1,0 +1,12 @@
+.child-node {
+  margin-left: 16px;
+}
+
+.parent-node {
+  cursor: pointer;
+  padding: 8px 22px;
+
+  .node-title {
+    margin-left: 4px;
+  }
+}
