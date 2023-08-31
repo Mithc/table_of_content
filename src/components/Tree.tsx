@@ -15,6 +15,7 @@ const Tree: React.FC = () => {
     useEffect((): void => {
         fetchData()
     }, [])
+
     const fetchData = async (): Promise<void> => {
         const entitiesUrl = 'http://localhost:4200/entities'
         const topLevelIdsUrl = 'http://localhost:4200/topLevelIds'
