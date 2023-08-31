@@ -39,3 +39,24 @@ Resources generated:
 
 -   http://localhost:4200/entities
 -   http://localhost:4200/topLevelIds
+
+### Requirements
+
+-   Use the up-to-date React library to create component logic and presentation. ✅
+-   We suggest using PostCSS, LESS/SASS, CSS-modules or CSS-in-JS library to create styles. SCSS used ✅
+-   You must not use special libraries for building TOCs and trees, but you can use additional libraries for secondary things like animations. ✅
+-   JSON data should be loaded asynchronously using a local web server. ✅
+-   Until TOC elements are rendered, the user must see a placeholder from a design template. ✅
+-   When clicking on the root element of the TOC section, the tree must hide or expand. ✅
+-   Create smooth animations for color and icon position changes. ✅
+    -   Add animation for expanded lst
+-   Create functional autotests for your TOC component, using one of the following frameworks: Playwright, Cypress, React Testing Library, Enzyme, Puppeteer.
+
+### Nice bonus if you can make:
+
+-   JS API Active topic choice by ID
+-   Topic filtering by string value
+    Active filtering when entering text in the input field (this is not present in a design template)
+    Filter results should appear when the user enters the whole query, not after each symbol
+    You can put a loading indicator while waiting for results to render
+-   Hiding and expanding TOC elements animation

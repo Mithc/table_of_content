@@ -14,7 +14,12 @@
         justify-content: space-between;
 
         .header-text {
-            margin-left: 20px;
+            color: var(--dark-text-hard, var(--text-icon-hard-inverted, #000));
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
             transition: color 0.3s ease-in-out;
             padding-left: 20px;
         }

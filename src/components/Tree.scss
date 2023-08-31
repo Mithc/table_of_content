@@ -1,11 +1,11 @@
 .tree-container {
-  width: 284px;
-  min-height: 100%;
-  height: auto;
-  background-color: #fff;
-  transition: background-color 0.3s ease-in-out;
+    width: 284px;
+    min-height: 100%;
+    height: auto;
+    background-color: #fff;
+    transition: background-color 0.3s ease-in-out;
 
-  &.dark {
-    background-color: black;
-  }
+    &.dark {
+        background-color: black;
+    }
 }

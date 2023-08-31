@@ -1,18 +1,22 @@
-import React, {type JSX, useState} from 'react'
+import React, { type JSX, useState } from 'react'
 import './App.scss'
 import Sidebar from './components/Sidebar'
-import {Theme, ThemeContext} from './context/ThemeContext'
+import { Theme, ThemeContext } from './context/ThemeContext'
 
 function App(): JSX.Element {
-    const [theme, setTheme] = useState<Theme>('dark')
+    const [theme, setTheme] = useState<Theme>(() => {
+        console.log(localStorage.getItem('theme'))
+        return (localStorage.getItem('theme') || 'light') as Theme
+    })
     const toggleTheme = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark')
+        setTheme(theme === 'dark' ? 'light' : 'dark') // todo
+        localStorage.setItem('theme', theme)
     }
     return (
         <ThemeContext.Provider value={theme}>
             <div className={`app-container ${theme}`}>
                 <header className="header">
-                    <h3 className="header-text">PAGE HEADER</h3>
+                    <h4 className="header-text">Product name</h4>
 
                     {/*Could be moved to another component*/}
                     <div className="theme-switch">
@@ -28,7 +32,7 @@ function App(): JSX.Element {
                     </div>
                 </header>
                 <div className="body-container">
-                    <Sidebar/>
+                    <Sidebar />
                     <></>
                 </div>
             </div>

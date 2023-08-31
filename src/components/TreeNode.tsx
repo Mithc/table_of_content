@@ -9,6 +9,7 @@ interface TreeNodeProps {
     treeData: PageList
     activeNodeId: string | null
     setActiveNode: (id: string) => void
+    lastActive?: boolean
 }
 
 const TreeNode: React.FC<TreeNodeProps> = ({
@@ -16,6 +17,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({
     treeData,
     activeNodeId,
     setActiveNode,
+    lastActive = false,
 }: TreeNodeProps) => {
     const theme = useContext(ThemeContext)
 
@@ -31,34 +33,42 @@ const TreeNode: React.FC<TreeNodeProps> = ({
                     setActiveNode(node.id)
                     toggleExpand()
                 }}
-                className={`parent-node ${
-                    activeNodeId === node.id ? 'active' : ''
-                } level${node.level} ${theme}`}
+                className={`parent-node 
+                ${activeNodeId === node.id ? 'active' : ''} 
+                ${lastActive ? 'lastActive' : ''} 
+                level${node.level} 
+                ${theme}`}
             >
                 {node.pages?.length && (
                     <Icon
-                        active={activeNodeId === node.id}
-                        fill={theme === 'dark' ? '#fff' : '#000000'}
-                    /> //todo
+                        active={expanded}
+                        fill={
+                            theme !== 'dark' && activeNodeId !== node.id
+                                ? '#000'
+                                : '#fff'
+                        }
+                    />
                 )}
                 <span className="node-title">{node.title}</span>
             </div>
-            {expanded && (
-                <div className="child-node">
-                    {node.pages?.length &&
-                        node.pages.map((childrenNode: string) => {
-                            return (
-                                <TreeNode
-                                    node={treeData[childrenNode]}
-                                    treeData={treeData}
-                                    key={treeData[childrenNode].id}
-                                    activeNodeId={activeNodeId}
-                                    setActiveNode={setActiveNode}
-                                ></TreeNode>
-                            )
-                        })}
-                </div>
-            )}
+            {expanded &&
+                node.pages?.length &&
+                node.pages.map((childrenNode: string) => {
+                    return (
+                        <TreeNode
+                            node={treeData[childrenNode]}
+                            treeData={treeData}
+                            key={treeData[childrenNode].id}
+                            activeNodeId={activeNodeId}
+                            setActiveNode={setActiveNode}
+                            lastActive={
+                                activeNodeId === node.id &&
+                                expanded &&
+                                node.level > 0
+                            }
+                        ></TreeNode>
+                    )
+                })}
         </>
     )
 }
