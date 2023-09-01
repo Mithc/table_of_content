@@ -1,8 +1,8 @@
 import { Page, PageList } from '../../interfaces/Page'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import './TreeNode.scss'
 import Icon from '../Icon/Icon'
-import { ThemeContext } from '../../context/ThemeContext'
+import { Theme } from '../../context/ThemeContext'
 
 interface TreeNodeProps {
     node: Page
@@ -10,6 +10,7 @@ interface TreeNodeProps {
     activeNodeId: string | null
     setActiveNode: (id: string) => void
     lastActive?: boolean
+    theme: Theme
 }
 
 const TreeNode: React.FC<TreeNodeProps> = ({
@@ -18,9 +19,8 @@ const TreeNode: React.FC<TreeNodeProps> = ({
     activeNodeId,
     setActiveNode,
     lastActive = false,
+    theme,
 }: TreeNodeProps) => {
-    const theme = useContext(ThemeContext)
-
     const [expanded, setExpanded] = useState(false)
 
     const isActiveNodeChild = (node: Page): boolean => {
@@ -76,6 +76,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({
                                 expanded &&
                                 node.level > 0
                             }
+                            theme={theme}
                         />
                     )
                 })}

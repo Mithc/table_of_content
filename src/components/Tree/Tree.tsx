@@ -1,30 +1,26 @@
-import React, { useContext } from 'react'
 import Placeholder from '../Placeholder/Placeholder'
 import './Tree.scss'
 import { PageList } from '../../interfaces/Page'
 import TreeNode from '../TreeNode/TreeNode'
-import { ThemeContext } from '../../context/ThemeContext'
+import { Theme } from '../../context/ThemeContext'
 
 interface TreeProps {
     isLoading: boolean
     treeData: PageList
     topLevelIds: string[]
-    isError: boolean
     selectedNodeKey: string | null
     setSelectedNodeKey: React.Dispatch<React.SetStateAction<string | null>>
-    retryLoadData: () => void
+    theme: Theme
 }
 
 const Tree: React.FC<TreeProps> = ({
     isLoading,
     treeData,
-    isError,
     topLevelIds,
     selectedNodeKey,
     setSelectedNodeKey,
-    retryLoadData,
+    theme,
 }) => {
-    const theme = useContext(ThemeContext)
     const renderTree = () => (
         <>
             {topLevelIds.map((topLevelId) => {
@@ -35,22 +31,13 @@ const Tree: React.FC<TreeProps> = ({
                         node={treeData[topLevelId]}
                         activeNodeId={selectedNodeKey}
                         setActiveNode={setSelectedNodeKey}
+                        theme={theme}
                     />
                 )
             })}
         </>
     )
-    return (
-        <div className={`tree-container ${theme}`}>
-            {isError && (
-                <div className="error">
-                    Error during loading
-                    <button onClick={retryLoadData}>Try Again</button>
-                </div>
-            )}
-            {isLoading ? <Placeholder /> : <>{renderTree()}</>}
-        </div>
-    )
+    return <>{isLoading ? <Placeholder /> : <>{renderTree()}</>}</>
 }
 
 export default Tree

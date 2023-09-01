@@ -1,0 +1,36 @@
+.tree-container {
+  width: 284px;
+  min-height: 100%;
+  height: auto;
+  background-color: #fff;
+  transition: background-color 0.3s ease-in-out;
+
+  &.dark {
+    background-color: black;
+  }
+}
+
+.error {
+  width: 200px;
+  margin-left: 32px;
+  background-color: #ffd8d6;
+  padding: 10px;
+  border: 1px solid #ff6b64;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    background-color: #ff6b64;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ff4e47;
+    }
+  }
+}

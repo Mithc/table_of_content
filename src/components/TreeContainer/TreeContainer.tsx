@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { PageList, PageListResponse } from '../../interfaces/Page'
 import Tree from '../Tree/Tree'
+import './TreeContainer.scss'
+import { ThemeContext } from '../../context/ThemeContext'
 
 const TreeContainer = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -9,6 +11,7 @@ const TreeContainer = () => {
     const [topLevelIds, setTopLevelIds] = useState<string[]>([])
     const [selectedNodeKey, setSelectedNodeKey] = useState<string | null>(null)
 
+    const theme = useContext(ThemeContext)
     useEffect((): void => {
         fetchData()
     }, [])
@@ -48,15 +51,23 @@ const TreeContainer = () => {
         fetchData()
     }
     return (
-        <Tree
-            isLoading={isLoading}
-            treeData={treeData}
-            isError={isError}
-            topLevelIds={topLevelIds}
-            selectedNodeKey={selectedNodeKey}
-            setSelectedNodeKey={setSelectedNodeKey}
-            retryLoadData={retryLoadData}
-        />
+        <div className={`tree-container ${theme}`}>
+            {isError ? (
+                <div className="error">
+                    Error during loading
+                    <button onClick={retryLoadData}>Try Again</button>
+                </div>
+            ) : (
+                <Tree
+                    isLoading={isLoading}
+                    treeData={treeData}
+                    topLevelIds={topLevelIds}
+                    selectedNodeKey={selectedNodeKey}
+                    setSelectedNodeKey={setSelectedNodeKey}
+                    theme={theme}
+                />
+            )}
+        </div>
     )
 }
 
