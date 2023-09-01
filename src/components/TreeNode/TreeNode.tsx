@@ -76,7 +76,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({
                                 expanded &&
                                 node.level > 0
                             }
-                        ></TreeNode>
+                        />
                     )
                 })}
         </>

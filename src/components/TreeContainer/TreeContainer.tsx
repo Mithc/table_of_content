@@ -18,10 +18,10 @@ const TreeContainer = () => {
         const entitiesUrl = 'http://localhost:4200/entities'
         const topLevelIdsUrl = 'http://localhost:4200/topLevelIds'
         try {
-            const [entitiesResponse, topLevelIdsResponse]: [
-                Response,
-                Response
-            ] = await Promise.all([fetch(entitiesUrl), fetch(topLevelIdsUrl)])
+            const [entitiesResponse, topLevelIdsResponse] = await Promise.all([
+                fetch(entitiesUrl),
+                fetch(topLevelIdsUrl),
+            ])
 
             if (!entitiesResponse.ok || !topLevelIdsResponse.ok) {
                 setIsError(true)

@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="301fbf20-9424-4eea-8d9f-ce8a25867209" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/TreeContainer/TreeContainer.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TreeContainer/TreeContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Icon/Icon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Icon/Icon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tree/Tree.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tree/Tree.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tree/Tree.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tree/Tree.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Placeholder/Placeholder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Placeholder/Placeholder.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tree/Tree.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tree/Tree.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TreeNode/TreeNode.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TreeNode/TreeNode.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TreeContainer/TreeContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TreeContainer/TreeContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TreeNode/TreeNode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TreeNode/TreeNode.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/ThemeContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/ThemeContext.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +141,7 @@
       <option name="presentableId" value="Default" />
       <updated>1692974688084</updated>
       <workItem from="1692974689949" duration="773000" />
-      <workItem from="1692975474015" duration="71748000" />
+      <workItem from="1692975474015" duration="72134000" />
     </task>
     <servers />
   </component>

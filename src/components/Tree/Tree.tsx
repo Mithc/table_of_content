@@ -25,7 +25,7 @@ const Tree: React.FC<TreeProps> = ({
     retryLoadData,
 }) => {
     const theme = useContext(ThemeContext)
-    const renderTree: React.FC = () => (
+    const renderTree = () => (
         <>
             {topLevelIds.map((topLevelId) => {
                 return (
@@ -48,7 +48,7 @@ const Tree: React.FC<TreeProps> = ({
                     <button onClick={retryLoadData}>Try Again</button>
                 </div>
             )}
-            {isLoading ? <Placeholder /> : <>{renderTree({})}</>}
+            {isLoading ? <Placeholder /> : <>{renderTree()}</>}
         </div>
     )
 }
