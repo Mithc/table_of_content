@@ -14,7 +14,7 @@ jest.mock('./context/ThemeContext', () => ({
 }))
 
 xdescribe('App Component', () => {
-    console.log(App)
+    // TODO There is so magic with this test, it can't render App component
     it('changes theme when the toggle is clicked', () => {
         render(<App />)
 

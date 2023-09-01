@@ -8,8 +8,9 @@ const App: React.FC = () => {
         (localStorage.getItem('theme') || 'light') as Theme
     )
     const toggleTheme = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark')
-        localStorage.setItem('theme', theme) // todo remove after debugging
+        const newTheme: Theme = theme === 'dark' ? 'light' : 'dark'
+        localStorage.setItem('theme', newTheme)
+        setTheme(newTheme)
     }
     return (
         <ThemeContext.Provider value={theme}>
