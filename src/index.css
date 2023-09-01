@@ -12,7 +12,7 @@ code {
 
 @font-face {
     font-family: 'JetBrains Sans';
-    src: url('../public/JetBrainsMono-Medium.woff2') format('woff2');
+    src: url('assets/JetBrainsMono-Medium.woff2') format('woff2');
     /* Add more format lines if you have other font formats */
     font-weight: normal;
     font-style: normal;

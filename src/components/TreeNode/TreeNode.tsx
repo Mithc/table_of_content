@@ -1,8 +1,8 @@
-import { Page, PageList } from '../interfaces/Page'
+import { Page, PageList } from '../../interfaces/Page'
 import React, { useContext, useState } from 'react'
 import './TreeNode.scss'
-import Icon from './Icon'
-import { ThemeContext } from '../context/ThemeContext'
+import Icon from '../Icon/Icon'
+import { ThemeContext } from '../../context/ThemeContext'
 
 interface TreeNodeProps {
     node: Page

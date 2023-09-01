@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Placeholder from './Placeholder'
+import Placeholder from '../Placeholder/Placeholder'
 import './Tree.scss'
-import { PageList, PageListResponse } from '../interfaces/Page'
-import TreeNode from './TreeNode'
-import { ThemeContext } from '../context/ThemeContext'
+import { PageList, PageListResponse } from '../../interfaces/Page'
+import TreeNode from '../TreeNode/TreeNode'
+import { ThemeContext } from '../../context/ThemeContext'
 
 const Tree: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true)

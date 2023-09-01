@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './Placeholder.scss'
-import { ThemeContext } from '../context/ThemeContext'
+import { ThemeContext } from '../../context/ThemeContext'
 
 const Placeholder: React.FC = () => {
     const theme = useContext(ThemeContext)

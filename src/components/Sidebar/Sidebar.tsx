@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import Tree from './Tree'
+import Tree from '../Tree/Tree'
 import './Sidebar.scss'
-import { ThemeContext } from '../context/ThemeContext'
+import { ThemeContext } from '../../context/ThemeContext'
 
 const Sidebar: React.FC = () => {
     const theme = useContext(ThemeContext)

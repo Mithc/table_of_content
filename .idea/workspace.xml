@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="301fbf20-9424-4eea-8d9f-ce8a25867209" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cypress.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/1-tree-component/sample.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/e2e.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Icon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Icon.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tree.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tree.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TreeNode.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TreeNode.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TreeNode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TreeNode.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/JetBrainsMono-Medium.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/JetBrainsMono-Medium.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,54 +62,40 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/cypress/e2e/1-tree-component" />
+      <recent name="$PROJECT_DIR$/cypress/e2e" />
       <recent name="$PROJECT_DIR$/mock" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.pretier">
-    <configuration name="TreeNode Component.calls setActiveNode and toggles expansion on click" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.cypress:open">
+    <configuration name="My First Test" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/TreeNode.test.tsx" />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/cypress/integration/sample.spec.js" />
       <test-names>
-        <test-name value="TreeNode Component" />
-        <test-name value="calls setActiveNode and toggles expansion on click" />
+        <test-name value="My First Test" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="TreeNode Component.expands child nodes when clicked" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/TreeNode.test.tsx" />
-      <test-names>
-        <test-name value="TreeNode Component" />
-        <test-name value="expands child nodes when clicked" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="TreeNode Component.renders node title" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/TreeNode.test.tsx" />
-      <test-names>
-        <test-name value="TreeNode Component" />
-        <test-name value="renders node title" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="lint:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="cypress:open" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="lint:fix" />
+        <script value="cypress:open" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="cypress:run" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="cypress:run" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -128,13 +111,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.cypress:open" />
+        <item itemvalue="npm.cypress:run" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="Jest.My First Test" />
         <item itemvalue="npm.pretier" />
-        <item itemvalue="npm.lint:fix" />
-        <item itemvalue="Jest.TreeNode Component.calls setActiveNode and toggles expansion on click" />
-        <item itemvalue="Jest.TreeNode Component.expands child nodes when clicked" />
-        <item itemvalue="Jest.TreeNode Component.renders node title" />
       </list>
     </recent_temporary>
   </component>
@@ -147,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1692974688084</updated>
       <workItem from="1692974689949" duration="773000" />
-      <workItem from="1692975474015" duration="60070000" />
+      <workItem from="1692975474015" duration="62956000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 import React, { type JSX, useState } from 'react'
 import './App.scss'
-import Sidebar from './components/Sidebar'
+import Sidebar from './components/Sidebar/Sidebar'
 import { Theme, ThemeContext } from './context/ThemeContext'
 
 function App(): JSX.Element {
