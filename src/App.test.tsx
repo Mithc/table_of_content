@@ -1,22 +1,20 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import App from './App'
 
 // Mock the ThemeContext.Provider
 jest.mock('./context/ThemeContext', () => ({
     ThemeContext: {
-        Consumer: function MockConsumer({
+        Consumer: ({
             children,
         }: {
-            children: (value: string) => ReactNode
-        }) {
-            return children('light') // Mock the theme value as 'light'
-        },
+            children: (value: string) => React.ReactNode
+        }) => children('dark'), // Mock the initial theme value as 'dark'
     },
 }))
 
-//todo
 xdescribe('App Component', () => {
+    console.log(App)
     it('changes theme when the toggle is clicked', () => {
         render(<App />)
 

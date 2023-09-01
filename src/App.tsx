@@ -3,16 +3,12 @@ import './App.scss'
 import Sidebar from './components/Sidebar/Sidebar'
 import { Theme, ThemeContext } from './context/ThemeContext'
 
-const App = () => {
+const App: React.FC = () => {
     const [theme, setTheme] = useState<Theme>(
         (localStorage.getItem('theme') || 'light') as Theme
     )
     const toggleTheme = () => {
-        console.log('123')
-        console.log(theme, theme === 'dark' ? 'light' : 'dark')
         setTheme(theme === 'dark' ? 'light' : 'dark')
-        console.log(theme, theme === 'dark' ? 'light' : 'dark')
-
         localStorage.setItem('theme', theme) // todo remove after debugging
     }
     return (
@@ -29,7 +25,10 @@ const App = () => {
                                 onChange={toggleTheme}
                                 checked={theme === 'dark'}
                             />
-                            <span className="slider round"></span>
+                            <span
+                                className="slider round"
+                                data-testid="theme-switch-checkbox"
+                            ></span>
                         </label>
                         <span className="label">Dark Mode</span>
                     </div>
