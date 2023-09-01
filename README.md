@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -36,9 +32,27 @@ Run mocked backend using JSON Server on 4200 port.
 Run `npm install -g json-server` to install json-server globally
 
 Resources generated:
-
 -   http://localhost:4200/entities
 -   http://localhost:4200/topLevelIds
+
+### `npm run lint`
+
+Lint the application code to identify and report linter issues.
+To automatically fix linter issues when possible, you can use:
+`npm run lint:fix`
+
+
+### `npm run pretier` 
+
+Run Prettier to automatically format your code, improving code consistency.
+
+### `npm run cypress:open` 
+
+Open the Cypress Test Runner interface. This allows you to interactively run and debug your Cypress test scenarios.
+
+### `npm run cypress:run` 
+
+Execute Cypress test scenarios in the terminal. This is useful for running your tests in a continuous integration (CI) environment or as part of automated workflows.
 
 ### Requirements
 
