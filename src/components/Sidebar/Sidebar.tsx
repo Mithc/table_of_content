@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
-import Tree from '../Tree/Tree'
 import './Sidebar.scss'
 import { ThemeContext } from '../../context/ThemeContext'
+import TreeContainer from '../TreeContainer/TreeContainer'
 
 const Sidebar: React.FC = () => {
     const theme = useContext(ThemeContext)
 
     return (
         <div className={`sidebar ${theme}`}>
-            <Tree />
+            <TreeContainer />
         </div>
     )
 }

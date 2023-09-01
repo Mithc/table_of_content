@@ -1,9 +1,8 @@
 import React, { ReactNode } from 'react'
-import { render, screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { fireEvent, render, screen } from '@testing-library/react'
 import Tree from './Tree'
 
-jest.mock('../context/ThemeContext', () => ({
+jest.mock('../../context/ThemeContext', () => ({
     ThemeContext: {
         Consumer: function MockConsumer({
             children,
@@ -18,74 +17,51 @@ jest.mock('../context/ThemeContext', () => ({
 global.fetch = jest.fn()
 
 describe('Tree Component', () => {
-    const mockSuccessfulFetch = (data: unknown) =>
-        (fetch as jest.Mock).mockResolvedValueOnce({
-            ok: true,
-            json: async () => data,
-        })
+    const mockProps = {
+        isLoading: false,
+        treeData: {
+            node0: {
+                id: 'node0',
+                title: 'Node 0',
+                parentId: '',
+                level: 0,
+                pages: [],
+                url: '',
+            },
+        },
+        topLevelIds: ['node0'],
+        isError: false,
+        selectedNodeKey: null,
+        setSelectedNodeKey: jest.fn(),
+        retryLoadData: jest.fn(),
+    }
 
-    const mockErrorFetch = () =>
-        (fetch as jest.Mock).mockRejectedValueOnce(new Error('Fetch error'))
+    it('renders loading state', () => {
+        const loadingProps = { ...mockProps, isLoading: true }
+        render(<Tree {...loadingProps} />)
 
-    it('Should renders loading state', () => {
-        render(<Tree />)
         expect(screen.getByTestId('placeholder')).toBeInTheDocument()
     })
 
-    it('Should render tree nodes and hide placeholder when data is fetched', async () => {
-        mockSuccessfulFetch({ pages: {} })
-        mockSuccessfulFetch([])
+    it('renders tree nodes when not loading', () => {
+        const { treeData } = mockProps
+        render(<Tree {...mockProps} />)
 
-        render(<Tree />)
+        // Verify that the nodes are rendered
+        expect(screen.getByText(treeData.node0.title)).toBeInTheDocument()
 
-        await waitFor(() => {
-            expect(screen.queryByTestId('placeholder')).toBeNull()
-        })
+        // You can add more assertions as needed for your specific tree structure
     })
 
-    it('Should handles fetch errors', async () => {
-        const consoleErrorSpy = jest.spyOn(console, 'error')
-        mockErrorFetch()
-        render(<Tree />)
+    it('displays an error message and "Try Again" button when isError is true', () => {
+        const errorProps = { ...mockProps, isError: true }
+        render(<Tree {...errorProps} />)
 
-        await waitFor(() => {
-            expect(consoleErrorSpy).toHaveBeenCalledWith(
-                'Error fetching data:',
-                expect.any(Error)
-            )
-        })
+        expect(screen.getByText('Error during loading')).toBeInTheDocument()
+        expect(screen.getByText('Try Again')).toBeInTheDocument()
 
-        consoleErrorSpy.mockRestore()
-    })
-
-    it('Should updates active node on TreeNode click', async () => {
-        const mockTreeData = {
-            node0: {
-                id: 'node0',
-                title: 'Node Text',
-                url: '',
-                parentId: '',
-                level: 0,
-                tabIndex: 0,
-                doNotShowWarningLink: true,
-                pages: [],
-            },
-        }
-        const mockTopLevelIds: string[] = ['node0']
-        mockSuccessfulFetch({ pages: mockTreeData })
-        mockSuccessfulFetch(mockTopLevelIds)
-
-        render(<Tree />)
-
-        await waitFor(() => {
-            expect(screen.queryByTestId('placeholder')).toBeNull()
-        })
-
-        const treeNode: HTMLElement = screen.getByText('Node Text')
-        userEvent.click(treeNode)
-
-        await waitFor(() => {
-            expect(treeNode.parentNode).toHaveClass('active')
-        })
+        // Simulate a click on the "Try Again" button
+        fireEvent.click(screen.getByText('Try Again'))
+        expect(errorProps.retryLoadData).toHaveBeenCalled()
     })
 })

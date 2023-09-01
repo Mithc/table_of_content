@@ -1,5 +1,5 @@
 import { Page, PageList } from '../../interfaces/Page'
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import './TreeNode.scss'
 import Icon from '../Icon/Icon'
 import { ThemeContext } from '../../context/ThemeContext'
@@ -23,6 +23,16 @@ const TreeNode: React.FC<TreeNodeProps> = ({
 
     const [expanded, setExpanded] = useState(false)
 
+    const isActiveNodeChild = (node: Page): boolean => {
+        if (activeNodeId && node.pages) {
+            return node.pages.some(
+                (childId: string) =>
+                    treeData[childId].id === activeNodeId ||
+                    isActiveNodeChild(treeData[childId])
+            )
+        }
+        return false
+    }
     const toggleExpand = () => {
         setExpanded((prevExpanded) => !prevExpanded)
     }
@@ -34,8 +44,8 @@ const TreeNode: React.FC<TreeNodeProps> = ({
                     toggleExpand()
                 }}
                 className={`parent-node 
-                ${activeNodeId === node.id ? 'active' : ''} 
-                ${lastActive ? 'lastActive' : ''} 
+                ${activeNodeId === node.id && 'active'} 
+                ${lastActive && 'lastActive'} 
                 level${node.level} 
                 ${theme}`}
             >
@@ -51,7 +61,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({
                 )}
                 <span className="node-title">{node.title}</span>
             </div>
-            {expanded &&
+            {(expanded || isActiveNodeChild(node)) &&
                 node.pages?.length &&
                 node.pages.map((childrenNode: string) => {
                     return (

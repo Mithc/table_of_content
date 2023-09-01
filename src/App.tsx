@@ -1,16 +1,19 @@
-import React, { type JSX, useState } from 'react'
+import { useState } from 'react'
 import './App.scss'
 import Sidebar from './components/Sidebar/Sidebar'
 import { Theme, ThemeContext } from './context/ThemeContext'
 
-function App(): JSX.Element {
-    const [theme, setTheme] = useState<Theme>(() => {
-        console.log(localStorage.getItem('theme'))
-        return (localStorage.getItem('theme') || 'light') as Theme
-    })
+const App = () => {
+    const [theme, setTheme] = useState<Theme>(
+        (localStorage.getItem('theme') || 'light') as Theme
+    )
     const toggleTheme = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark') // todo
-        localStorage.setItem('theme', theme)
+        console.log('123')
+        console.log(theme, theme === 'dark' ? 'light' : 'dark')
+        setTheme(theme === 'dark' ? 'light' : 'dark')
+        console.log(theme, theme === 'dark' ? 'light' : 'dark')
+
+        localStorage.setItem('theme', theme) // todo remove after debugging
     }
     return (
         <ThemeContext.Provider value={theme}>

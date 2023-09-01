@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import TreeNode from './TreeNode'
 
-jest.mock('../context/ThemeContext', () => ({
+jest.mock('../../context/ThemeContext', () => ({
     ThemeContext: {
         Consumer: function MockConsumer({
             children,
