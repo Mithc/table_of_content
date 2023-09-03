@@ -47,13 +47,13 @@ To automatically fix linter issues when possible, you can use:
 
 Run Prettier to automatically format your code, improving code consistency.
 
-### `npm run cypress:open`
+### `npm run e2e`
 
-Open the Cypress Test Runner interface. This allows you to interactively run and debug your Cypress test scenarios.
+Open the Playwright Test Runner interface. This allows you to interactively run and debug your Playwright test scenarios.
 
-### `npm run cypress:run`
+### `npm run e2e:headless`
 
-Execute Cypress test scenarios in the terminal. This is useful for running your tests in a continuous integration (CI)
+Execute Playwright test scenarios in the terminal. This is useful for running your tests in a continuous integration (CI)
 environment or as part of automated workflows.
 
 ### Requirements
@@ -66,9 +66,9 @@ environment or as part of automated workflows.
 - Until TOC elements are rendered, the user must see a placeholder from a design template. ✅
 - When clicking on the root element of the TOC section, the tree must hide or expand. ✅
 - Create smooth animations for color and icon position changes. ✅
-    - Add animation for expanded lst
+    - Add animation for expanded list
 - Create functional autotests for your TOC component, using one of the following frameworks: Playwright, Cypress, React
-  Testing Library, Enzyme, Puppeteer.
+  Testing Library, Enzyme, Puppeteer. ✅
 
 ### Nice bonus if you can make:
 
@@ -82,5 +82,29 @@ environment or as part of automated workflows.
 ### My ideas
 
 - It would be nice to Make Tree(including its children) component fully generic, currently internal business logic is
-dependant on our [Page, PageList](./src/interfaces/Page.ts) interface and [Theme type](./src/context/ThemeContext.ts).
-If the theme could be moved to the same UI library, as this component, Pages structure is harder to be taken outside it.
+  dependant on our [Page, PageList](./src/interfaces/Page.ts) interface and [Theme type](./src/context/ThemeContext.ts).
+  If the theme could be moved to the same UI library, as this component, Pages structure is harder to be taken outside
+  it.
+
+### Testing Scenarios - Tree Component
+
+- #### Placeholder Display
+  Should display a placeholder until data is loaded.
+- #### Display Top-Level Items
+  Should display a list of top-level items.
+- #### Hidden Levels
+  Should not display elements with class level1, level2, or level3.
+- #### Display Child Elements
+  Should display elements with class level1 after clicking on an element with class level0.
+- #### Active Element Styling
+  Should have the "active" class on the selected element.
+- #### Special Highlight
+  Should have a special highlight on child nodes of the active node at the first level or deeper.
+- #### Theme Switching
+  Should allow the theme to be changed upon clicking the switch.
+
+
+
+
+
+

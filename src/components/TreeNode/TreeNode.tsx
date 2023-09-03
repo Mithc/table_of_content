@@ -44,10 +44,13 @@ const TreeNode: React.FC<TreeNodeProps> = ({
                     toggleExpand()
                 }}
                 className={`parent-node 
-                ${activeNodeId === node.id && 'active'} 
-                ${lastActive && 'lastActive'} 
+                ${activeNodeId === node.id ? 'active' : ''} 
+                ${lastActive ? 'lastActive' : ''} 
                 level${node.level} 
                 ${theme}`}
+                data-testid={`level${node.level} ${
+                    node.pages?.length ? 'has-children' : ''
+                }`}
             >
                 {node.pages?.length && (
                     <Icon

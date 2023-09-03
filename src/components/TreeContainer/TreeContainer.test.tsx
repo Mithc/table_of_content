@@ -53,9 +53,8 @@ describe('Tree Component', () => {
         render(<TreeContainer />)
 
         await waitFor(() => {
-            expect(
-                screen.queryByText('Error during loading')
-            ).toBeInTheDocument()
+            expect(screen.getByText('Error during loading')).toBeInTheDocument()
+            expect(screen.getByText('Try Again')).toBeInTheDocument()
         })
     })
 

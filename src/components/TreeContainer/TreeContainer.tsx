@@ -41,6 +41,7 @@ const TreeContainer = () => {
                 setTreeData(pageListResponse.pages)
                 setTopLevelIds(listOfIds)
             }, 2000)
+            // setTimeout is to display loader, could be deleted
         } catch (error: unknown) {
             setIsError(true)
             console.error('Error fetching data:', error)
