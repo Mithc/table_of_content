@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './Placeholder.scss'
-import { ThemeContext } from '../../context/ThemeContext'
+import { Theme } from '../../context/ThemeContext'
 
-const Placeholder: React.FC = () => {
-    const theme = useContext(ThemeContext)
+const Placeholder: React.FC<{ theme: Theme }> = ({ theme }) => {
     return (
         <div className={`placeholder ${theme}`} data-testid="placeholder">
             <div className="rectangle w100" />

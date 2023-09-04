@@ -52,7 +52,10 @@ const TreeContainer = () => {
         fetchData()
     }
     return (
-        <div className={`tree-container ${theme}`}>
+        <div
+            className={`tree-container ${theme}`}
+            data-testid={'tree-container'}
+        >
             {isError ? (
                 <div className="error">
                     Error during loading

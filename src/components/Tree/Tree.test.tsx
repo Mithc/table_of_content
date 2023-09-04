@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import Tree from './Tree'
 import { Theme } from '../../context/ThemeContext'
 

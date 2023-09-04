@@ -14,7 +14,10 @@ const App: React.FC = () => {
     }
     return (
         <ThemeContext.Provider value={theme}>
-            <div className={`app-container ${theme}`}>
+            <div
+                className={`app-container ${theme}`}
+                data-testid="app-container"
+            >
                 <header className="header">
                     <h4 className="header-text">Product name</h4>
 

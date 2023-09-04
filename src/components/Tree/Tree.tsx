@@ -37,7 +37,9 @@ const Tree: React.FC<TreeProps> = ({
             })}
         </>
     )
-    return <>{isLoading ? <Placeholder /> : <>{renderTree()}</>}</>
+    return (
+        <>{isLoading ? <Placeholder theme={theme} /> : <>{renderTree()}</>}</>
+    )
 }
 
 export default Tree
