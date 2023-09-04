@@ -62,6 +62,7 @@ describe('TreeNode Component', () => {
                 activeNodeId={null}
                 setActiveNode={() => {}}
                 theme="dark"
+                filteringValue=""
             />
         )
         const nodeTitle = getByText(mockNode.title)
@@ -77,6 +78,7 @@ describe('TreeNode Component', () => {
                 activeNodeId={null}
                 setActiveNode={setActiveNode}
                 theme="dark"
+                filteringValue=""
             />
         )
 
@@ -98,6 +100,7 @@ describe('TreeNode Component', () => {
                 activeNodeId={null}
                 setActiveNode={setActiveNode}
                 theme="dark"
+                filteringValue=""
             />
         )
 

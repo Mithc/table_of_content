@@ -40,7 +40,7 @@ const TreeContainer = () => {
                 setIsLoading(false)
                 setTreeData(pageListResponse.pages)
                 setTopLevelIds(listOfIds)
-            }, 2000)
+            }, 500)
             // setTimeout is to display loader, could be deleted
         } catch (error: unknown) {
             setIsError(true)
@@ -69,6 +69,7 @@ const TreeContainer = () => {
                     selectedNodeKey={selectedNodeKey}
                     setSelectedNodeKey={setSelectedNodeKey}
                     theme={theme}
+                    filtering={true}
                 />
             )}
         </div>

@@ -3,6 +3,7 @@ import './Tree.scss'
 import { PageList } from '../../interfaces/Page'
 import TreeNode from '../TreeNode/TreeNode'
 import { Theme } from '../../context/ThemeContext'
+import { useState } from 'react'
 
 interface TreeProps {
     isLoading: boolean
@@ -11,6 +12,7 @@ interface TreeProps {
     selectedNodeKey: string | null
     setSelectedNodeKey: React.Dispatch<React.SetStateAction<string | null>>
     theme: Theme
+    filtering?: boolean
 }
 
 const Tree: React.FC<TreeProps> = ({
@@ -20,10 +22,36 @@ const Tree: React.FC<TreeProps> = ({
     selectedNodeKey,
     setSelectedNodeKey,
     theme,
+    filtering = false,
 }) => {
+    const [filteringValue, setFilteringValue] = useState('')
+
+    const getFilteringValue = (topLevelId: string): boolean => {
+        return (
+            treeData[topLevelId].pages?.some(getFilteringValue) ||
+            treeData[topLevelId].title
+                .toLowerCase()
+                .includes(filteringValue.toLowerCase())
+        )
+    }
     const renderTree = () => (
         <>
-            {topLevelIds.map((topLevelId) => {
+            {filtering && (
+                <>
+                    <label htmlFor="filter" className={`filter-label ${theme}`}>
+                        Filter:
+                        <input
+                            type="text"
+                            id="filter"
+                            onChange={(event) =>
+                                setFilteringValue(event.target.value)
+                            }
+                            placeholder="print something"
+                        />
+                    </label>
+                </>
+            )}
+            {topLevelIds.filter(getFilteringValue).map((topLevelId) => {
                 return (
                     <TreeNode
                         key={treeData[topLevelId].id}
@@ -32,6 +60,7 @@ const Tree: React.FC<TreeProps> = ({
                         activeNodeId={selectedNodeKey}
                         setActiveNode={setSelectedNodeKey}
                         theme={theme}
+                        filteringValue={filteringValue}
                     />
                 )
             })}

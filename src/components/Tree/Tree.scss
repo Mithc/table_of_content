@@ -1,0 +1,28 @@
+.filter-label {
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  padding: 13px;
+
+  #filter {
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-family: JetBrains Sans, sans-serif;
+    font-size: 13px;
+    height: 20px;
+    outline: none !important;
+    margin-top: -3px;
+    width: 100%;
+    margin-left: 5px;
+  }
+
+  &.dark {
+    color: #cccccc;
+
+    #filter {
+      color: #cccccc;
+    }
+  }
+}
+

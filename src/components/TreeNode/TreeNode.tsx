@@ -11,6 +11,7 @@ interface TreeNodeProps {
     setActiveNode: (id: string) => void
     lastActive?: boolean
     theme: Theme
+    filteringValue: string
 }
 
 const TreeNode: React.FC<TreeNodeProps> = ({
@@ -20,6 +21,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({
     setActiveNode,
     lastActive = false,
     theme,
+    filteringValue,
 }: TreeNodeProps) => {
     const [expanded, setExpanded] = useState(false)
 
@@ -33,6 +35,16 @@ const TreeNode: React.FC<TreeNodeProps> = ({
         }
         return false
     }
+
+    const getFilteringValue = (topLevelId: string): boolean => {
+        return (
+            treeData[topLevelId].pages?.some(getFilteringValue) ||
+            treeData[topLevelId].title
+                .toLowerCase()
+                .includes(filteringValue.toLowerCase())
+        )
+    }
+
     const toggleExpand = () => {
         setExpanded((prevExpanded) => !prevExpanded)
     }
@@ -66,23 +78,26 @@ const TreeNode: React.FC<TreeNodeProps> = ({
             </div>
             {(expanded || isActiveNodeChild(node)) &&
                 node.pages?.length &&
-                node.pages.map((childrenNode: string) => {
-                    return (
-                        <TreeNode
-                            node={treeData[childrenNode]}
-                            treeData={treeData}
-                            key={treeData[childrenNode].id}
-                            activeNodeId={activeNodeId}
-                            setActiveNode={setActiveNode}
-                            lastActive={
-                                activeNodeId === node.id &&
-                                expanded &&
-                                node.level > 0
-                            }
-                            theme={theme}
-                        />
-                    )
-                })}
+                node.pages
+                    .filter(getFilteringValue)
+                    .map((childrenNode: string) => {
+                        return (
+                            <TreeNode
+                                node={treeData[childrenNode]}
+                                treeData={treeData}
+                                key={treeData[childrenNode].id}
+                                activeNodeId={activeNodeId}
+                                setActiveNode={setActiveNode}
+                                lastActive={
+                                    activeNodeId === node.id &&
+                                    expanded &&
+                                    node.level > 0
+                                }
+                                theme={theme}
+                                filteringValue={filteringValue}
+                            />
+                        )
+                    })}
         </>
     )
 }

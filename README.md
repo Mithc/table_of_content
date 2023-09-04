@@ -73,7 +73,7 @@ environment or as part of automated workflows.
 ### Nice bonus if you can make:
 
 -   JS API Active topic choice by ID ✅
--   Topic filtering by string value
+-   Topic filtering by string value 
     Active filtering when entering text in the input field (this is not present in a design template) Filter results
     should appear when the user enters the whole query, not after each symbol
     You can put a loading indicator while waiting for results to render

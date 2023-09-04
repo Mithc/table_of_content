@@ -2,7 +2,6 @@ import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import TreeContainer from './TreeContainer'
 
-// Mock fetch function
 global.fetch = jest.fn(() =>
     Promise.resolve({
         ok: true,
@@ -28,7 +27,6 @@ describe('Tree Component', () => {
     it('Should make backend call', async () => {
         render(<TreeContainer />)
 
-        // Ensure fetch is called with the correct URLs
         expect(fetch).toHaveBeenCalledTimes(2)
         expect(fetch).toHaveBeenCalledWith('http://localhost:4200/entities')
         expect(fetch).toHaveBeenCalledWith('http://localhost:4200/topLevelIds')

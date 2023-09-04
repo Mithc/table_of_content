@@ -49,9 +49,6 @@ describe('Tree Component', () => {
         const { treeData } = mockProps
         render(<Tree {...mockProps} />)
 
-        // Verify that the nodes are rendered
         expect(screen.getByText(treeData.node0.title)).toBeInTheDocument()
-
-        // You can add more assertions as needed for your specific tree structure
     })
 })
